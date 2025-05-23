@@ -1,0 +1,468 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 70px;
+    background-color: black;
+}
+
+.header a {
+    height: 100%;
+}
+
+.header a img {
+    height: 100%;
+}
+
+#nav_bar {
+    display: flex;
+    align-items: center;
+}
+
+#nav_bar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+}
+
+#nav_bar .dropdown {
+    position: relative;
+}
+
+#nav_bar .dropdown .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    min-width: 200px;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+#nav_bar .dropdown .submenu .subcategoria {
+    position: relative;
+    padding: 5px 0; /* Espaciado entre subcategorías */
+}
+
+#nav_bar .dropdown .submenu .subcategoria > a {
+    display: block;
+    padding: 10px;
+    margin: 0;
+    color: white;
+    text-decoration: none;
+}
+
+#nav_bar .dropdown .submenu .subcategoria .submenu-2 {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #333; /* Fondo más oscuro para diferenciar */
+    min-width: 200px;
+    z-index: 1000;
+    padding: 10px 0;
+    border-left: 2px solid #555; /* Borde para separar visualmente */
+}
+
+#nav_bar .dropdown .submenu .subcategoria .submenu-2 a {
+    display: block;
+    padding: 10px 15px; /* Espaciado interno para sub-subcategorías */
+    color: white;
+    text-decoration: none;
+    margin: 5px 0; /* Espaciado entre sub-subcategorías */
+}
+
+#nav_bar .dropdown:hover .submenu {
+    display: block;
+}
+
+#nav_bar .dropdown .submenu .subcategoria:hover .submenu-2 {
+    display: block;
+}
+
+#iconos_header {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    color: white;
+    gap: 20px;
+}
+#icono_idioma{
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    top: 30px; /* Ajusta según el tamaño del icono */
+    left: 0;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.submenu .subcategoria {
+    display: flex;
+    flex-direction: column;
+}
+
+.submenu a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+    display: block;
+}
+
+.submenu a:hover {
+    background: #f1f1f1;
+}
+
+#icono_idioma:hover .submenu {
+    display: block;
+}
+
+#iconos_header img {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#perfil_img{
+    margin-top: 3%;
+    height: 42px !important;
+}
+
+/* Estilos para móviles */
+@media (max-width: 897px) {
+    .header {
+        flex-direction: column;
+        justify-content: flex-start;
+        height: auto;
+        padding: 20px;
+    }
+
+    .header img {
+        height: auto;
+        max-width: 90%;
+        margin-bottom: 15px;
+    }
+
+    #nav_bar {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    #nav_bar a {
+        margin: 2% 0;
+        text-align: center;
+    }
+    .dropdown{
+        margin-bottom: 2%;
+    }
+
+    #nav_bar .dropdown .submenu {
+        position: static;
+        display: none;
+        background-color: #222;
+        margin-left: 0; /* Eliminar margen izquierdo */
+        width: 100%; /* Ocupar todo el ancho */
+        text-align: center; /* Centrar el texto */
+    }
+
+    #nav_bar .dropdown .submenu .subcategoria .submenu-2 {
+        position: static;
+        display: none;
+        background-color: #444;
+        margin-left: 0; /* Eliminar margen izquierdo */
+        width: 100%; /* Ocupar todo el ancho */
+        text-align: center; /* Centrar el texto */
+    }
+
+    #nav_bar .dropdown .submenu.active {
+        display: block;
+    }
+
+    #nav_bar .dropdown .submenu .subcategoria .submenu-2.active {
+        display: block;
+    }
+
+    #iconos_header {
+        display: none;
+    }
+}
+
+
+#contenedor_principal{
+    width: 90%;
+    margin: 5%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+}
+#contenedor_detalle_factura{
+    display: flex;
+    width: 40%;
+    border: 3px solid #14EF1B;
+    justify-content: center;
+    padding-top: 3%;
+    padding-bottom: 10%;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+.datos_cliente{
+    width: 80%;
+}
+.datos_cliente span{
+    color: red;
+}
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+input[type="text"], input[type="email"], input[type="tel"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #14EF1B;
+    border-radius: 5px;
+}
+.info_campos {
+    display: flex;
+    justify-content: space-between;
+}
+#contenedor_detalle_pago{
+    width: 40%;
+}
+#orden_generada{
+    width: 80%;
+    background-color: black;
+    height: 30%;
+    font-size: 15px;
+    margin-bottom: 15%;
+    border: 3px solid #14EF1B;
+}
+#margin_orden{
+    margin: 5%;
+}
+#titulo_orden{
+    justify-self: center;
+    color: white;
+    font-size: 20px;
+}
+.subcont_prod_subt{
+    display: flex;
+    justify-content: space-around;
+}
+.color_rojo{
+    color: red;
+    margin-bottom: 15px;
+}
+.color_verde{
+    color: #14EF1B;
+}
+.separador{
+    width: 100%;
+    border: 2px solid #14EF1B;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+#detalle_envio{
+    display: flex;
+    justify-content: space-around;
+}
+#metodo_pago{
+    height: auto;
+    border: 2px solid black;
+    width: 80%;
+    border: 3px solid #14EF1B;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    background-color: #D9D9D9;
+}
+@media (max-width: 1577px) {
+    #contenedor_info_tarjeta{
+        display: block !important;
+    }
+    #nombre_tarjeta{
+        width: 90%;
+    }
+    #numero_tarjeta{
+        width: 90%;
+    }
+    .info_campos {
+        display: block;
+    }
+}
+#metodo_pago p{
+    font-size: 15px;
+}
+#contenedor_info_tarjeta{
+    display: flex;
+    justify-content: space-around;
+}
+#fecha_cvv{
+    display: flex;
+    justify-content: space-between;
+}
+#contenedor_info_tarjeta input{
+    width: 100%;
+}
+
+#fecha_cvv input{
+    width: 20px;
+}
+
+#fecha_caducidad{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#fecha_caducidad p{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#div_condiciones{
+    display: flex;
+    gap: 20px;
+}
+#div_button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#contenedor_principal button{
+    width: 60%;
+    height: 60px;
+    background-color: black;
+    color: white;
+    border: 3px solid #14EF1B;
+}
+#div_verde{
+    margin-top: 10%;
+    width: 100%;
+    height: 20px;
+    background-color: #14EF1B;
+}
+#div_servicios{
+    width: 100%;
+    height: auto;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-evenly;
+    padding: 20px;
+}
+#mas_paginas{
+    width: 100%;
+    height: auto;
+    background-color: #14EF1B;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    #sobre_nosotros {
+        flex: 1 1 40%; 
+        margin-right: 10px; 
+    }
+    #formas_pago{
+        flex: 40%;
+        margin-right: 10px;
+    }
+}
+
+.texto_blanco{
+    color: white;
+    font-weight: bolder;
+}
+.texto_verde{
+    color: #14EF1B;
+    font-weight: bolder;
+}
+.servicio{
+    width: 25%;
+    justify-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 966px) {
+    #div_servicios {
+        justify-content: center; 
+    }
+
+
+    .servicio {
+        flex: 1 1 40%; 
+        margin-right: 10px; 
+    }
+
+
+    .servicio {
+        flex: 1 1 40%; 
+        margin-top: 20px; 
+    }
+
+    #contenedor_principal{
+        display: block;
+    }
+    #contenedor_detalle_factura{
+        width: 100%;
+    }
+    #contenedor_detalle_pago{
+        margin-top: 50px;
+        width: 100%;
+    }
+    #orden_generada{
+        width: 100%;
+    }
+    #metodo_pago{
+        width: 100%;
+    }
+}
+
+#sobre_nosotros{
+    width: 15%;
+}
+#sobre_nosotros p{
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+#sobre_nosotros a{
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+#fila_icono{
+    display: flex;
+    margin-bottom: 7px;
+}
+#fila_icono img{
+    width: 25px;
+    margin-right: 10px;
+}
+#formas_pago{
+    width: 15%;
+}
+#formas_pago img{
+    width: 35px;
+}
+#formas_pago p{
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
